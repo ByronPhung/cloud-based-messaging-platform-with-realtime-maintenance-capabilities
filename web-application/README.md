@@ -1,11 +1,9 @@
 # Installation
 
-1. Install the express dependencies.
+You must have Node.JS installed. To download, visit https://nodejs.org/en/.
+
+Once Node.JS is installed, install the express dependencies and Socket.IO module using NPM by running the following commands in the root project directory:
 ```bash
 npm install --save express@4.10.2
-```
-
-2. Install the Socket.IO module.
-```bash
 npm install --save socket.io
 ```

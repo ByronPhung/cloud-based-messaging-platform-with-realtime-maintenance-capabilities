@@ -32,13 +32,12 @@ import com.eric_liang.cbmp.R;
 import com.eric_liang.cbmp.adapters.ContactsAdapter;
 import com.eric_liang.cbmp.models.Contact;
 
-import java.util.ArrayList;
-
 import io.realm.Realm;
+import io.realm.RealmResults;
 
 public class ActivityMain extends AppCompatActivity {
 
-    ArrayList<Contact> contacts;
+    Realm mRealm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,15 +47,21 @@ public class ActivityMain extends AppCompatActivity {
         RecyclerView rvContacts = (RecyclerView) findViewById(R.id.rv_contacts);
 
         //Realm Initialization
-        Realm realm = Realm.getDefaultInstance();
-        realm.beginTransaction();
-
-        realm.commitTransaction();
+        mRealm = Realm.getDefaultInstance();
+        mRealm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                Contact c = realm.createObject(Contact.class);
+                c.setName("John");
+                Contact c2 = realm.createObject(Contact.class);
+                c2.setName("Eric");
+            }
+        });
+        RealmResults<Contact> contactResults= mRealm.where(Contact.class).findAll();
 
         // Initialize contacts
-        contacts = Contact.createContactsList(20);
         // Create adapter passing in the sample user data
-        ContactsAdapter adapter = new ContactsAdapter(this, contacts);
+        ContactsAdapter adapter = new ContactsAdapter(this, contactResults);
         // Attach the adapter to the recyclerview to populate items
         rvContacts.setAdapter(adapter);
         // Set layout manager to position the items

@@ -31,8 +31,6 @@ import android.widget.EditText;
 
 import com.eric_liang.cbmp.R;
 
-import io.realm.Realm;
-
 public class ActivityLogin extends AppCompatActivity {
 
     private EditText etLoginEmail;
@@ -49,6 +47,7 @@ public class ActivityLogin extends AppCompatActivity {
         btnLogin = (Button) findViewById(R.id.btn_login);
     }
 
-
+    protected void hashPassword() {
+    }
 
 }

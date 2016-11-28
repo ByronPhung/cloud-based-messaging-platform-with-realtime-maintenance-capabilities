@@ -14,14 +14,14 @@
         android:theme="@style/AppTheme"
         android:name="com.eric_liang.cbmp.AppCBMP">
         <activity android:name=".activities.ActivityMain">
-        </activity>
-        <activity android:name=".activities.ActivityLogin" />
-        <activity android:name=".activities.ActivityChat">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter></activity>
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.ActivityLogin" />
+        <activity android:name=".activities.ActivityChat"></activity>
     </application>
 
 </manifest>

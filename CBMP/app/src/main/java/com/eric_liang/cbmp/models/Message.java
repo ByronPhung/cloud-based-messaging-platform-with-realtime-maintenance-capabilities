@@ -23,6 +23,9 @@ SOFTWARE.
  */
 package com.eric_liang.cbmp.models;
 
+import java.sql.Timestamp;
+import java.util.Date;
+
 import io.realm.RealmObject;
 
 /**
@@ -32,15 +35,16 @@ import io.realm.RealmObject;
 public class Message extends RealmObject {
     private String message;
     private String sender; //User object instead of string?
-    private String receiver;
-    //private Date timestamp;
+    //private String receiver;
+    private Date timestamp;
 
     public String getMessage() { return message; }
     public String getSender() { return sender; }
-    public String getReceiver() { return receiver; }
-    //public Date getTimestamp() { return timestamp; }
+    //public String getReceiver() { return receiver; }
+    public Date getTimestamp() { return timestamp; }
 
-    public void setReceiver(String receiver) { this.receiver = receiver; }
+    public void setSender(String sender) { this.sender = sender; }
+    //public void setReceiver(String receiver) { this.receiver = receiver; }
     public void setMessage(String message) { this.message = message; }
-    //public void setTimestamp(Date timestamp) { this.timestamp = timestamp; }
+    public void setTimestamp(Date timestamp) { this.timestamp = timestamp; }
 }

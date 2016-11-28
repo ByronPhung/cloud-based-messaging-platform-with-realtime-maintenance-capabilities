@@ -38,13 +38,14 @@ import io.realm.RealmResults;
 public class ActivityMain extends AppCompatActivity {
 
     Realm mRealm;
+    RecyclerView rvContacts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        RecyclerView rvContacts = (RecyclerView) findViewById(R.id.rv_contacts);
+        rvContacts = (RecyclerView) findViewById(R.id.rv_contacts);
 
         //Realm Initialization
         mRealm = Realm.getDefaultInstance();

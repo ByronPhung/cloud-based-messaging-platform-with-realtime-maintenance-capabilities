@@ -34,11 +34,11 @@ public class User extends RealmObject {
     private String email;
     private String key;
     private String role;
-    private Contact[] contacts;
+    //private Contact[] contacts;
 
     public String getName() { return name; }
     public String getEmail() { return email; }
     public String getRole() { return role; }
     public String getKey() { return key; }
-    public Contact[] getContacts() { return contacts; }
+    //public Contact[] getContacts() { return contacts; }
 }

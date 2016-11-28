@@ -37,4 +37,6 @@ public class Contact extends RealmObject {
     public String getName() { return name; }
     public String getEmail() { return email; }
     public String getRole() { return role; }
+
+    public void setName(String n) {this.name = n;}
 }
